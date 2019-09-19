@@ -3,9 +3,9 @@ spring:
     type:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://182.92.98.24:3306/speediness_platform?serverTimezone=Hongkong&useUnicode=true&characterEncoding=utf8&useSSL=false
+      url: jdbc:mysql://localhost:3306/speediness_platform?serverTimezone=Hongkong&useUnicode=true&characterEncoding=utf8&useSSL=false
       username: root
-      password: zxyzxy123
+      password: root
       initial-size: 10
       max-active: 100
       min-idle: 10
