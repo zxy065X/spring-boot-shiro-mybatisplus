@@ -1,0 +1,24 @@
+2019-09-19 17:02:07,616 [INFO] [main] com.java.SpringbootWebApplication [StartupInfoLogger.java : 50] Starting SpringbootWebApplication on SC-201909011524 with PID 12888 (E:\workspace\springboot-parent\springboot-web\target\classes started by administrator in E:\workspace\springboot-parent)
+2019-09-19 17:02:07,623 [DEBUG] [main] com.java.SpringbootWebApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-09-19 17:02:07,624 [INFO] [main] com.java.SpringbootWebApplication [SpringApplication.java : 679] The following profiles are active: dev
+2019-09-19 17:02:14,072 [INFO] [main] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 296] Root WebApplicationContext: initialization completed in 6326 ms
+2019-09-19 17:02:15,280 [DEBUG] [main] com.java.modules.job.dao.ScheduleJobDao.selectList [BaseJdbcLogger.java : 159] ==>  Preparing: SELECT job_id,bean_name,params,cron_expression,status,remark,create_time FROM schedule_job 
+2019-09-19 17:02:15,414 [DEBUG] [main] com.java.modules.job.dao.ScheduleJobDao.selectList [BaseJdbcLogger.java : 159] ==> Parameters: 
+2019-09-19 17:02:15,490 [DEBUG] [main] com.java.modules.job.dao.ScheduleJobDao.selectList [BaseJdbcLogger.java : 159] <==      Total: 1
+2019-09-19 17:02:17,087 [INFO] [main] com.java.SpringbootWebApplication [StartupInfoLogger.java : 59] Started SpringbootWebApplication in 10.188 seconds (JVM running for 11.008)
+2019-09-19 17:30:00,031 [DEBUG] [quartzScheduler_Worker-1] com.java.modules.job.utils.ScheduleJob [ScheduleJob.java : 47] 任务准备执行，任务ID：1
+2019-09-19 17:30:00,036 [ERROR] [quartzScheduler_Worker-1] com.java.modules.job.utils.ScheduleJob [ScheduleJob.java : 61] 任务执行失败，任务ID：1
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'testTask' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:775)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105)
+	at com.java.common.springbootcommon.utils.SpringContextUtils.getBean(SpringContextUtils.java:23)
+	at com.java.modules.job.utils.ScheduleJob.executeInternal(ScheduleJob.java:49)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+2019-09-19 17:30:00,335 [DEBUG] [quartzScheduler_Worker-1] com.java.modules.job.dao.ScheduleJobLogDao.insert [BaseJdbcLogger.java : 159] ==>  Preparing: INSERT INTO schedule_job_log ( job_id, bean_name, params, status, error, times, create_time ) VALUES ( ?, ?, ?, ?, ?, ?, ? ) 
+2019-09-19 17:30:00,359 [DEBUG] [quartzScheduler_Worker-1] com.java.modules.job.dao.ScheduleJobLogDao.insert [BaseJdbcLogger.java : 159] ==> Parameters: 1(Long), testTask(String), renren(String), 1(Integer), org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'testTask' available(String), 6(Integer), 2019-09-19 17:30:00.031(Timestamp)
+2019-09-19 17:30:00,415 [DEBUG] [quartzScheduler_Worker-1] com.java.modules.job.dao.ScheduleJobLogDao.insert [BaseJdbcLogger.java : 159] <==    Updates: 1
