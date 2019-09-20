@@ -21,8 +21,6 @@ import java.util.Map;
 /**
  * Shiro配置
  *
- * 
- * 
  * @date 2017-04-20 18:33
  */
 @Configuration
@@ -56,22 +54,8 @@ public class ShiroConfig {
         shiroFilter.setFilters(filters);
 
         Map<String, String> filterMap = new LinkedHashMap<>();
-        filterMap.put("/robot/tbdialrecord/receiveCallRecord", "anon");
-        filterMap.put("/robot/tbdialrecord/receiveVoice", "anon");
-        filterMap.put("/robot/tbdialrecord/receiveDialog", "anon");
-        filterMap.put("/robot/tbdialrecord/updateResult", "anon");
-        filterMap.put("/robot/tbdialrecord/taskEnd", "anon");
-        filterMap.put("/robot/tbdialrecord/answerResult", "anon");
-        filterMap.put("/robot/tbdialrecord/concurrenceNO", "anon");
-        filterMap.put("/robot/tbdialrecord/uploadAudio", "anon");
-        filterMap.put("/robot/tbdialrecord/cdrAddResult", "anon");
-        filterMap.put("/robot/tbdialrecord/taskTermination", "anon");
-        filterMap.put("/null/tbconversation/uploadConversation", "anon");
-        filterMap.put("/null/tbtaskinfo/exportMissedCall", "anon");
         filterMap.put("/ueditor/**", "anon");
-        filterMap.put("/robot/tbmission/excelImport", "anon");
-        filterMap.put("/robot/tbmission/list", "anon");
-        filterMap.put("/**/upload*/**", "anon");
+//        filterMap.put("/**/upload*/**", "anon");
         filterMap.put("/sys/img/**", "anon");
         filterMap.put("/static/**", "anon");
         filterMap.put("/template/**", "anon");
